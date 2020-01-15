@@ -7,6 +7,8 @@ Authors@R:
            role = c("aut", "cre"),
            email = "rflight79@gmail.com")
 Description: Provides a README describing R messages and what they mean.
+URL: https://github.com/rmflight/rerrors
+BugReports: https://github.com/rmflight/rerrors/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
