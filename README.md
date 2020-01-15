@@ -17,6 +17,7 @@ This error is telling you it **can't find the function**. Most times, this is be
 ### Conflict Messages
 
 > library("tidyverse")
+
 > -- Conflicts ------------------------------------------ tidyverse_conflicts() --
 
 > x dplyr::filter() masks stats::filter()
@@ -37,6 +38,6 @@ And this is just saying that the packages on CRAN are built under the latest ver
 
 If you have a message you don't know the meaning of, please file an issue. If you have a message you would like to see added, please file a pull request. 
 
-This project has a Contributor Code of Conduct that you are asked to abide by.
+Please note that the 'rerrors' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
 
 
