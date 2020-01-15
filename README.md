@@ -2,6 +2,12 @@
 
 When someone is first starting out in R, if they are not used to programming, the various errors, warnings and messages that R provides can be intimidating. This is meant to be a useful collection of observed types of messages that R provides, along with an explanation of what R is trying to tell them.
 
+### Have an Error Message?
+
+If you have an error message you need help with file an [issue](https://github.com/rmflight/rerrors/issues).
+
+If you have an error message and explanation you want to add, [please clone the repo](https://github.com/rmflight/rerrors), add your message, and create a pull request.
+
 ## Installing packages
 
 You don't need to do 'install.packages("tidyverse")' every time. Install is installing it on your system. You only need to do it again if you re-install R, or want a newer version. 'library()' loads it for use, and 'install.packages()' installs it to your computer.
@@ -70,8 +76,9 @@ Technically, R is telling you that you are trying to subset a function (`df` is 
 
 ## Contributing
 
-If you have a message you don't know the meaning of, please file an issue. If you have a message you would like to see added, please file a pull request. 
+If you have an error message you need help with file an [issue](https://github.com/rmflight/rerrors/issues). 
+If you have an error message and explanation you want to add, [please clone the repo](https://github.com/rmflight/rerrors), add your message, and create a pull request.
 
-This project has a Contributor Code of Conduct that you are asked to abide by.
+This project has a [Contributor Code of Conduct](https://github.com/rmflight/rerrors/blob/master/CODE_OF_CONDUCT.md), and you are asked to abide by it.
 
 
