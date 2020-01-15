@@ -7,6 +7,7 @@ When someone is first starting out in R, if they are not used to programming, th
 You don't need to do 'install.packages("tidyverse")' every time. Install is installing it on your system. You only need to do it again if you re-install R, or want a newer version. 'library()' loads it for use, and 'install.packages()' installs it to your computer.
 
 > Error in instal.packages("tidyverse") :
+
 >   could not find function "instal.packages
 
 This error is telling you it **can't find the function**. Most times, this is because it is spelled wrong, as it is here. Other times, it's because you haven't done "library('tidyverse')" yet and it can't find the function you want. This is a good reason to use a tab-completion enabled editor such as RStudio, it will help you make sure the spelling of functions is correct. 
@@ -17,7 +18,9 @@ This error is telling you it **can't find the function**. Most times, this is be
 
 > library("tidyverse")
 > -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+
 > x dplyr::filter() masks stats::filter()
+
 > x dplyr::lag()    masks stats::lag()
 
 This is telling you that there are packages you have loaded via 'library("tidyverse")' that have functions that are named the same as functions in the base install that are always loaded.
@@ -25,6 +28,7 @@ This is telling you that there are packages you have loaded via 'library("tidyve
 ### Built Version Warnings
 
 > Warning messages:
+
 > 1: package ‘tidyverse’ was built under R version 3.5.3
 
 And this is just saying that the packages on CRAN are built under the latest version of R 3.5.3 , but you have 3.5.something_else. In my experience, as long as it installs, you are OK. 
