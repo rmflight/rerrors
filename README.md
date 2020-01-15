@@ -47,6 +47,27 @@ This is telling you that you have not loaded the library that the ggplot functio
 
 This is pretty clear, the number of x coordinates is different to the number of y coordinates you have given. Often caused by either a typo in x or y names, or you subsetted one and not the other. 
 
+## Length is not a multiple
+
+> (1:2)*(1:3)
+
+>[1] 1 4 3
+
+>Warning message:
+
+>In (1:2) * (1:3) :
+  longer object length is not a multiple of shorter object length
+
+This is only a warning, but you should usually think of it as an error.  Your code is trying to do an operation on two vectors of different lengths.  R has rules that allow the operation to proceed (which is why it's only a warning) but you probably used the wrong name or subsetted one and not the other, or something similar.
+
+##  Not subsettable
+
+> df[2]
+
+> Error in df[2] : object of type 'closure' is not subsettable
+
+Technically, R is telling you that you are trying to subset a function (`df` is the density function for the F distribution).  In practice, this almost always happens when you think you have a variable called `df` (eg, a data frame) but R can't find it. Most likely the variable doesn't exist, but it might exist somewhere that R can't see. 
+
 ## Contributing
 
 If you have a message you don't know the meaning of, please file an issue. If you have a message you would like to see added, please file a pull request. 
