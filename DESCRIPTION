@@ -1,12 +1,13 @@
 Package: rerrors
-Title: What the Package Does (One Line, Title Case)
+Title: Documenting R Messages
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = c("Robert", "M"),
+           family = "Flight",
            role = c("aut", "cre"),
-           email = "first.last@example.com")
-Description: What the package does (one paragraph).
+           email = "rflight79@gmail.com")
+Description: Provides a README describing R messages and what they mean.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 6.1.1
