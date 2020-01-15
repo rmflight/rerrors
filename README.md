@@ -17,7 +17,6 @@ This error is telling you it **can't find the function**. Most times, this is be
 ### Conflict Messages
 
 > library("tidyverse")
-
 > -- Conflicts ------------------------------------------ tidyverse_conflicts() --
 
 > x dplyr::filter() masks stats::filter()
@@ -34,10 +33,24 @@ This is telling you that there are packages you have loaded via 'library("tidyve
 
 And this is just saying that the packages on CRAN are built under the latest version of R 3.5.3 , but you have 3.5.something_else. In my experience, as long as it installs, you are OK. 
 
+## Using packages
+### Function not found
+
+> Error in ggplot() : could not find function "ggplot"
+
+This is telling you that you have not loaded the library that the ggplot function is in (ggplot2 in this case). To fix this you load ggplot2 first with `library(ggplot2)` .
+
+### Lengths differ
+> plot(x,y)
+> Error in xy.coords(x, y, xlabel, ylabel, log) : 
+>   'x' and 'y' lengths differ
+
+This is pretty clear, the number of x coordinates is different to the number of y coordinates you have given. Often caused by either a typo in x or y names, or you subsetted one and not the other. 
+
 ## Contributing
 
 If you have a message you don't know the meaning of, please file an issue. If you have a message you would like to see added, please file a pull request. 
 
-Please note that the 'rerrors' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+This project has a Contributor Code of Conduct that you are asked to abide by.
 
 
