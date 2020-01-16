@@ -82,12 +82,9 @@
 <h2 class="hasAnchor">
 <a href="#installing-packages" class="anchor"></a>Installing packages</h2>
 <p>You don’t need to do ‘install.packages(“tidyverse”)’ every time. Install is installing it on your system. You only need to do it again if you re-install R, or want a newer version. ‘library()’ loads it for use, and ‘install.packages()’ installs it to your computer.</p>
-<blockquote>
-<p>Error in instal.packages(“tidyverse”) :</p>
-</blockquote>
-<blockquote>
-<p>could not find function "instal.packages</p>
-</blockquote>
+<pre><code>instal.packages("tidyverse")
+Error in instal.packages("tidyverse") :
+ could not find function "instal.packages</code></pre>
 <p>This error is telling you it <strong>can’t find the function</strong>. Most times, this is because it is spelled wrong, as it is here. Other times, it’s because you haven’t done “library(‘tidyverse’)” yet and it can’t find the function you want. This is a good reason to use a tab-completion enabled editor such as RStudio, it will help you make sure the spelling of functions is correct.</p>
 </div>
 <div id="loading-packages" class="section level2">
@@ -96,26 +93,17 @@
 <div id="conflict-messages" class="section level3">
 <h3 class="hasAnchor">
 <a href="#conflict-messages" class="anchor"></a>Conflict Messages</h3>
-<blockquote>
-<p>library(“tidyverse”) – Conflicts —————————————— tidyverse_conflicts() –</p>
-</blockquote>
-<blockquote>
-<p>x dplyr::filter() masks stats::filter()</p>
-</blockquote>
-<blockquote>
-<p>x dplyr::lag() masks stats::lag()</p>
-</blockquote>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"tidyverse"</span>)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="op">--</span><span class="st"> </span>Conflicts <span class="op">------------------------------------------</span><span class="st"> </span><span class="kw">tidyverse_conflicts</span>() <span class="op">--</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">x dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>() masks stats<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span>()</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">x dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/lead-lag.html">lag</a></span>()    masks stats<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/stats/lag.html">lag</a></span>()</a></code></pre></div>
 <p>This is telling you that there are packages you have loaded via ‘library(“tidyverse”)’ that have functions that are named the same as functions in the base install that are always loaded.</p>
 </div>
 <div id="built-version-warnings" class="section level3">
 <h3 class="hasAnchor">
 <a href="#built-version-warnings" class="anchor"></a>Built Version Warnings</h3>
-<blockquote>
-<p>Warning messages:</p>
-</blockquote>
-<blockquote>
-<p>1: package ‘tidyverse’ was built under R version 3.5.3</p>
-</blockquote>
+<pre><code>Warning messages:
+ 1: package ‘tidyverse’ was built under R version 3.5.3</code></pre>
 <p>And this is just saying that the packages on CRAN are built under the latest version of R 3.5.3 , but you have 3.5.something_else. In my experience, as long as it installs, you are OK.</p>
 </div>
 </div>
@@ -125,53 +113,44 @@
 <div id="function-not-found" class="section level3">
 <h3 class="hasAnchor">
 <a href="#function-not-found" class="anchor"></a>Function not found</h3>
-<blockquote>
-<p>Error in ggplot() : could not find function “ggplot”</p>
-</blockquote>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">ggplot</span>(...)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">Error <span class="cf">in</span> <span class="kw">ggplot</span>() <span class="op">:</span><span class="st"> </span>could not find <span class="cf">function</span> <span class="st">"ggplot"</span></a></code></pre></div>
 <p>This is telling you that you have not loaded the library that the ggplot function is in (ggplot2 in this case). To fix this you load ggplot2 first with <code><a href="https://rdrr.io/r/base/library.html">library(ggplot2)</a></code> .</p>
 </div>
 <div id="lengths-differ" class="section level3">
 <h3 class="hasAnchor">
 <a href="#lengths-differ" class="anchor"></a>Lengths differ</h3>
-<blockquote>
-<p>plot(x,y) Error in xy.coords(x, y, xlabel, ylabel, log) : ‘x’ and ‘y’ lengths differ</p>
-</blockquote>
-<p>This is pretty clear, the number of x coordinates is different to the number of y coordinates you have given. Often caused by either a typo in x or y names, or you subsetted one and not the other.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">x =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span>(<span class="dv">100</span>)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">y =<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span>(<span class="dv">1000</span>)</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span>(x,y)</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">Error <span class="cf">in</span> <span class="kw"><a href="https://rdrr.io/r/grDevices/xy.coords.html">xy.coords</a></span>(x, y, xlabel, ylabel, log) <span class="op">:</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="st"> 'x'</span> and <span class="st">'y'</span> lengths differ</a></code></pre></div>
+<p>This is pretty clear, the number of x coordinates is different to the number of y coordinates you have given. Often caused by either a typo in x or y names, or you subsetted one and not the other. You can double check it by doing:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/length.html">length</a></span>(x)</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/length.html">length</a></span>(y)</a></code></pre></div>
 </div>
 <div id="length-is-not-a-multiple" class="section level3">
 <h3 class="hasAnchor">
 <a href="#length-is-not-a-multiple" class="anchor"></a>Length is not a multiple</h3>
-<blockquote>
-<p>(1:2)*(1:3)</p>
-</blockquote>
-<blockquote>
-<p>[1] 1 4 3</p>
-</blockquote>
-<blockquote>
-<p>Warning message:</p>
-</blockquote>
-<blockquote>
-<p>In (1:2) * (1:3) : longer object length is not a multiple of shorter object length</p>
-</blockquote>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>)<span class="op">*</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">4</span> <span class="dv">3</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">Warning message<span class="op">:</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="kw">In</span> (<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>) <span class="op">*</span><span class="st"> </span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>) <span class="op">:</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="st"> </span>longer object length is not a multiple of shorter object length</a></code></pre></div>
 <p>This is only a warning, but you should usually think of it as an error. Your code is trying to do an operation on two vectors of different lengths. R has rules that allow the operation to proceed (which is why it’s only a warning) but you probably used the wrong name or subsetted one and not the other, or something similar.</p>
 </div>
 <div id="not-subsettable" class="section level3">
 <h3 class="hasAnchor">
 <a href="#not-subsettable" class="anchor"></a>Not subsettable</h3>
-<blockquote>
-<p>df[2]</p>
-</blockquote>
-<blockquote>
-<p>Error in df[2] : object of type ‘closure’ is not subsettable</p>
-</blockquote>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">df[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">Error <span class="cf">in</span> df[<span class="dv">2</span>] <span class="op">:</span><span class="st"> </span>object of type <span class="st">'closure'</span> is not subsettable</a></code></pre></div>
 <p>Technically, R is telling you that you are trying to subset a function (<code>df</code> is the density function for the F distribution). In practice, this almost always happens when you think you have a variable called <code>df</code> (eg, a data frame) but R can’t find it. Most likely the variable doesn’t exist, but it might exist somewhere that R can’t see.</p>
 </div>
 <div id="unexpected-string-constant" class="section level3">
 <h3 class="hasAnchor">
 <a href="#unexpected-string-constant" class="anchor"></a>Unexpected String Constant</h3>
-<blockquote>
-<p>data_frame[, c(“column1” “column2”)] Error: unexpected string constant in data_frame[, c(“column1” “column2”)]</p>
-</blockquote>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">data_frame[, <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"column1"</span> <span class="st">"column2"</span>)]</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">Error<span class="op">:</span><span class="st"> </span>unexpected string constant <span class="cf">in</span> data_frame[, <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"column1"</span> <span class="st">"column2"</span>)]</a></code></pre></div>
 <p>What happened here when I tried to get two columns of the <code>data_frame</code> is that I forgot the “,” in between the two column names.</p>
 </div>
 </div>
