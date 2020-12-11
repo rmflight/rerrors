@@ -101,6 +101,24 @@ Error: unexpected string constant in data_frame[, c("column1" "column2")]
 
 What happened here when I tried to get two columns of the `data_frame` is that I forgot the "," in between the two column names.
 
+## File Permissions
+
+### Zip Permission Denied
+
+```r
+zip(zipfile, ...)
+sh: 1: : Permission denied
+Warning message:
+In system2(zip, args, input = input) : error in running command
+```
+
+As of R 4.0.3, this means that R can't find the zip command on a Unix or Linux type system.
+The way to fix it is to do:
+
+```r
+Sys.setenv(R_ZIPCMD = "path/to/zip")
+```
+
 ## Contributing
 
 If you have an error message you need help with file an [issue](https://github.com/rmflight/rerrors/issues). 
