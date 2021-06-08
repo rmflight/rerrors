@@ -43,6 +43,34 @@ Warning messages:
 
 And this is just saying that the packages on CRAN are built under the latest version of R 3.5.3 , but you have 3.5.something_else. In my experience, as long as it installs, you are OK. 
 
+### Dependency Version Error
+
+```
+library(ggplot2)
+"package or namespace load failed for ‘ggplot2’ in loadnamespace(i, c(lib.loc, .libpaths()), versioncheck = vi[[i]]): namespace ‘ellipsis’ 0.3.1 is being loaded, but >= 0.3.2 is required"
+```
+
+Here, you've recently upgraded `ggplot2`, and now you are seeing an error about the `ellipsis` package.
+It means that the `ellipsis` package is out of date.
+The easiest way to verify what is going on, is to look directly at it, and double check the version you have installed, in this case by doing:
+
+```
+packageVersion("ellipsis")
+[1] '0.3.1'
+```
+
+This shows that indeed, the wrong version of `ellipsis` is currently installed.
+So you should restart R (Ctrl+Shift+F10 from RStudio), and then install the affected package and check it again:
+
+```
+install.packages("ellipsis")
+packageVersion("ellipsis")
+```
+
+Hopefully it provides the right version.
+If it doesn't, you may need to check the [version currently available on CRAN](https://cran.r-project.org/web/packages/ellipsis/index.html).
+Normally, a package isn't available on CRAN if it's dependencies also aren't available, but sometimes R doesn't do a good job of updating the dependent packages.
+
 ## Using packages
 
 ### Function not found
